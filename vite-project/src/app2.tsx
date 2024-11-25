@@ -7,7 +7,6 @@ const App: React.FC = () => {
   const [rut, setRut] = useState("");
   const [correo, setCorreo] = useState("");
   const [comentario, setComentario] = useState("");
-  const [genero, setGenero] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,10 +17,6 @@ const App: React.FC = () => {
     if (name === "comentario") setComentario(value);
   };
 
-  const handleGeneroChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setGenero(e.target.value);
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Datos del formulario:");
@@ -30,27 +25,25 @@ const App: React.FC = () => {
     console.log("Rut:", rut);
     console.log("Correo electrónico:", correo);
     console.log("Comentario:", comentario);
-    console.log("Género:", genero); 
   };
 
+  // Nueva función para limpiar los campos
   const handleClear = () => {
     setNombre("");
     setApellido("");
     setRut("");
     setCorreo("");
     setComentario("");
-    setGenero("");
   };
 
   return (
-    <div className="formulario">
+    <div className="App">
       <h1>Formulario de Información</h1>
-      <h2>Ingrese su información a continuación</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="nombre">Nombre</label>
           <input
-            type="texto"
+            type="text"
             id="nombre"
             name="nombre"
             value={nombre}
@@ -60,7 +53,7 @@ const App: React.FC = () => {
         <div>
           <label htmlFor="apellido">Apellido</label>
           <input
-            type="texto"
+            type="text"
             id="apellido"
             name="apellido"
             value={apellido}
@@ -96,27 +89,13 @@ const App: React.FC = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div>
-          <label htmlFor="genero">Género</label>
-          <select
-            id="genero"
-            name="genero"
-            value={genero}
-            onChange={handleGeneroChange}
-          >
-            <option value="">Seleccione</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
 
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <button type="submit">Guardar</button>
           <button
-            className="limpio"
             type="button"
             onClick={handleClear}
+            style={{ marginLeft: "10px", backgroundColor: "red", color: "white" }}
           >
             Limpiar
           </button>

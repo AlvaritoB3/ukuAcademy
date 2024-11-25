@@ -40,7 +40,7 @@
 .read-the-docs {
   color: #888;
 }
-.App {
+.formulario {
   font-family: Arial, sans-serif;
   padding: 40px;
   max-width: 600px;
@@ -95,4 +95,48 @@ button {
 
 button:hover {
   background-color: #45a049;
+}body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.form-container input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.form-container button:hover {
+  background-color: #0056b3;
+}
+div{
+  margin-top: 20px;
+}
+button.limpio{
+margin-left: 10px;
+background-color: red;
+color: white;
+}
+.select{
+  text-align: center;
+  resize: none;
 }
