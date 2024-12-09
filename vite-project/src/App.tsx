@@ -1,6 +1,5 @@
 import React, { useState } from "react"; 
-import "./App.css";
-
+import "./App.css"
 const App: React.FC = () => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
